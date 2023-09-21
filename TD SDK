@@ -105,7 +105,7 @@ try {
               
                       /*BEGIN INITIALIZE*/
              if (window.td == undefined){
-              var dynamicWriteKey = b.tealium_environment == "prod" ? "12125/a4c44d2b735ac4a5e13b3eae090142e4d48e5800" : '12125/a4c44d2b735ac4a5e13b3eae090142e4d48e5800'
+              var dynamicWriteKey = b.tealium_environment == "prod" ? "prod API key" : 'dev API key'
               var dynamicDatabase = b.tealium_environment == "prod" ? "prod_source" : 'dev_source'
   
               var td = new Treasure({
@@ -122,7 +122,7 @@ try {
               var oneTrustResponse = b['cp.OptanonConsent']
   
               if (oneTrustResponse != undefined) {
-                  if (oneTrustResponse.toLowerCase().indexOf("c0004") > -1) {
+                  if (oneTrustResponse.toLowerCase().indexOf("one trust segments go here") > -1) {
                       td.setSignedMode()
                       console.debug('Tealium Status: Treasure Data Initialization: setting signed mode oneTrustResponse is ' +oneTrustResponse);
                   } else {
@@ -160,7 +160,7 @@ try {
               var myLookupCookie = b['cp.cp_rwd_id']
   
               window.td.fetchUserSegments({
-                  'audienceToken': ['e8b9ab34-0a30-4106-ac63-1d21f2664b4a'],
+                  'audienceToken': ['TD Audience Tokens go here'],
               
                   keys: {
                       'cp_rwd_id': myLookupCookie,
@@ -196,11 +196,11 @@ try {
             setTimeout(function () {
               switch (event_type){
                 case "view":
-                  td.trackEvent("td_celebrity_sdk_webdl",data_package)
+                  td.trackEvent("td Table goes here",data_package)
                   console.debug("Treasure data TE is view")
                   break;
                 case "link":
-                  td.trackEvent("td_celebrity_sdk_link_clicks",data_package)
+                  td.trackEvent("td Table goes here",data_package)
                   console.debug("Treasure data TE is link")
                   break;
               }
